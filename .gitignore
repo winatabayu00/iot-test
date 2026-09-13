@@ -1,0 +1,32 @@
+.DS_Store
+
+# Python
+**/.venv/
+**/__pycache__/
+**/*.pyc
+
+# AI
+ai-training/.env
+ai-training/dataset/
+ai-training/runs/
+
+# Camera
+camera-controller/.env
+camera-controller/captures/*
+!camera-controller/captures/.gitkeep
+
+# PHP
+codeigniter-cms/vendor/
+codeigniter-cms/.env
+codeigniter-cms/writable/cache/*
+codeigniter-cms/writable/logs/*
+codeigniter-cms/writable/session/*
+codeigniter-cms/writable/uploads/*
+codeigniter-cms/writable/debugbar/*
+!codeigniter-cms/writable/*/index.html
+!codeigniter-cms/writable/index.html
+
+# IDE / misc
+.idea/
+.vscode/
+.phpunit.result.cache
