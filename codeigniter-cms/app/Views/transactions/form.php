@@ -3,6 +3,7 @@
 <h1>New Transaction</h1>
 <p>Prices shown are indicative. Server recalculates from database.</p>
 <form method="post" action="/transactions" id="trx-form">
+<?= csrf_field() ?>
 <label>Customer<br><select name="customer_id" required>
 <option value="">-- choose --</option>
 <?php foreach ($customers as $c): ?><option value="<?= esc($c['id']) ?>"><?= esc($c['name']) ?></option><?php endforeach; ?>

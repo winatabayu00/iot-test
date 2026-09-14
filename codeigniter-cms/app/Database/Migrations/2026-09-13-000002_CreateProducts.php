@@ -9,7 +9,7 @@ class CreateProducts extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id'          => ['type' => 'BIGSERIAL', 'unsigned' => true, 'auto_increment' => true],
+            'id'          => ['type' => 'BIGINT', 'constraint' => 20, 'auto_increment' => true], // ponytail: signed IDs for PG+MySQL parity, ceiling 9.2e18
             'name'        => ['type' => 'VARCHAR', 'constraint' => 180, 'null' => false],
             'description' => ['type' => 'TEXT', 'null' => true],
             'price'       => ['type' => 'NUMERIC', 'constraint' => '14,2', 'null' => false],

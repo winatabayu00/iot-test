@@ -9,9 +9,9 @@ class CreateTransactionItems extends Migration
     public function up()
     {
         $this->forge->addField([
-            'id'             => ['type' => 'BIGSERIAL', 'unsigned' => true, 'auto_increment' => true],
-            'transaction_id' => ['type' => 'BIGINT', 'unsigned' => true, 'null' => false],
-            'product_id'     => ['type' => 'BIGINT', 'unsigned' => true, 'null' => false],
+            'id'             => ['type' => 'BIGINT', 'constraint' => 20, 'auto_increment' => true], // ponytail: signed IDs for PG+MySQL parity, ceiling 9.2e18
+            'transaction_id' => ['type' => 'BIGINT', 'constraint' => 20, 'null' => false],
+            'product_id'     => ['type' => 'BIGINT', 'constraint' => 20, 'null' => false],
             'quantity'       => ['type' => 'INT', 'constraint' => 11, 'null' => false],
             'unit_price'     => ['type' => 'NUMERIC', 'constraint' => '14,2', 'null' => false],
             'subtotal'       => ['type' => 'NUMERIC', 'constraint' => '14,2', 'null' => false],

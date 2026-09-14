@@ -8,7 +8,7 @@ Dashboard, Products CRUD, Customers CRUD, Transaction create/history/detail. Ser
 
 ## Requirements
 
-PHP 8.2+, Composer 2, PostgreSQL 16+, miniserver reachable via VPN.
+PHP 8.2+, Composer 2, PostgreSQL 16+ (primary, miniserver reachable via VPN) or MySQL 8+ (verified local alternative).
 
 ## Install
 
@@ -18,7 +18,7 @@ composer install
 cp env .env   # or use existing .env
 ```
 
-Edit `.env` (manual setup):
+Edit `.env` (manual setup, Postgre primary):
 
 ```ini
 database.default.hostname = MINISERVER_HOST
@@ -28,6 +28,8 @@ database.default.password = CMS_PASSWORD
 database.default.DBDriver = Postgre
 database.default.port = 5432
 ```
+
+Alternative local MySQL 8+ (verified 2026-09-14 via `iot-mysql-test` container, port 3307): see commented block in `.env.example`.
 
 ## Migrate + Seed + Run
 

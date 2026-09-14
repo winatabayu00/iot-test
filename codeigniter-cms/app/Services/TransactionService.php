@@ -93,8 +93,8 @@ class TransactionService
 
                 // Conditional decrement: affected rows must be 1, else stock changed underneath us.
                 $db->query(
-                    'UPDATE products SET stock = stock - ?, updated_at = NOW() WHERE id = ? AND stock >= ?',
-                    [$line['quantity'], $line['product_id'], $line['quantity']]
+                    'UPDATE products SET stock = stock - ?, updated_at = ? WHERE id = ? AND stock >= ?',
+                    [$line['quantity'], date('Y-m-d H:i:s'), $line['product_id'], $line['quantity']]
                 );
                 if ($db->affectedRows() !== 1) {
                     throw new RuntimeException('Stock changed during checkout, transaction aborted.');

@@ -7,7 +7,7 @@
 <?php foreach ($customers as $c): ?>
 <tr><td><?= esc($c['name']) ?></td><td><?= esc($c['email'] ?? '-') ?></td><td><?= esc($c['phone'] ?? '-') ?></td>
 <td><a href="/customers/<?= esc($c['id']) ?>/edit">Edit</a>
-<form class="inline" method="post" action="/customers/<?= esc($c['id']) ?>/delete" onsubmit="return confirm('Delete?')"><button>Delete</button></form></td></tr>
+<form class="inline" method="post" action="/customers/<?= esc($c['id']) ?>/delete" onsubmit="return confirm('Delete?')"><?= csrf_field() ?><button>Delete</button></form></td></tr>
 <?php endforeach; ?></table>
 <?php endif; ?>
 <?= $this->endSection() ?>

@@ -7,7 +7,7 @@
 <?php foreach ($products as $p): ?>
 <tr><td><?= esc($p['name']) ?></td><td><?= esc(number_format((float) $p['price'], 2)) ?></td><td><?= esc($p['stock']) ?></td>
 <td><a href="/products/<?= esc($p['id']) ?>/edit">Edit</a>
-<form class="inline" method="post" action="/products/<?= esc($p['id']) ?>/delete" onsubmit="return confirm('Delete?')"><button>Delete</button></form></td></tr>
+<form class="inline" method="post" action="/products/<?= esc($p['id']) ?>/delete" onsubmit="return confirm('Delete?')"><?= csrf_field() ?><button>Delete</button></form></td></tr>
 <?php endforeach; ?></table>
 <?php endif; ?>
 <?= $this->endSection() ?>

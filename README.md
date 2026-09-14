@@ -151,3 +151,12 @@ Sebelum submission:
 - lakukan konfirmasi pengumpulan dengan link repository sesuai instruksi assignment.
 
 Gunakan checklist ini untuk final audit: repository public, hasil kerja ter-push, spesifikasi OS/komputer dicantumkan, `best.pt` + script training/inference tersedia, camera dapat didemokan, CMS jalan di localhost.
+
+## 8. Lingkungan yang Diuji
+
+- Komputer: MacBook Air (M1, 2020, MacBookAir10,1, MGN93ID/A), RAM 8 GB, tanpa GPU diskrit
+- OS: macOS 26.6.2 (Build 25G83)
+- Python: 3.11.6 (`venv` + `pip`)
+- PHP: 8.3.30, Composer 2.6.5, CodeIgniter 4.7.4
+- Database: PostgreSQL 18.6 (server) / psql 18.0 (client)
+- Repository: public di `https://github.com/winatabayu00/iot-test`
